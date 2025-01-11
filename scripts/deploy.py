@@ -1,5 +1,11 @@
 # Write your contract deployment script here.
 from brownie import Bank, accounts
+import os
+
 
 def main():
-    Bank.deploy({'from': accounts[0]})
+    bank = Bank.deploy({'from': accounts[0]})
+
+    f = open("./scripts/app/api/.env", "w")
+    f.write("BANK_ADDRESS=" + str(bank))
+    f.close()
