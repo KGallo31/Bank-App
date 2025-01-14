@@ -11,7 +11,8 @@ function App() {
     return (
         //Create your conditional component here for routing.
         <div>
-            <Login/>
+            <Home/>
+            {/* <Login/> */}
         </div>
     );
 }
