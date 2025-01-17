@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import 'reactjs-popup/dist/index.css';
 
-function Home(props) {
+function Home({setUser}) {
     //Create States here
 
     const [bankBalance, setBankBalance] = useState(0)
@@ -12,7 +12,7 @@ function Home(props) {
 
 
     function logout() {
-
+        setUser(null)
     }
 
     function refreshBalance() {
@@ -34,7 +34,7 @@ function Home(props) {
             <header className='Title'>
                 <h1>Block Bank</h1>
                 <div className='LogoutButtonDiv'>
-                    <button className='SubmitButton'>Logout</button>
+                    <button onClick={logout} className='SubmitButton'>Logout</button>
                 </div>
             </header>
             <body>

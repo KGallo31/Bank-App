@@ -7,12 +7,13 @@ import './App.css';
 function App() {
     //Create your states here.
 
+    const [user, setUser] = useState(null)
+
 
     return (
         //Create your conditional component here for routing.
         <div>
-            <Home/>
-            {/* <Login/> */}
+            {user === null || user.errors ? <Login setUser={setUser} /> : <Home setUser={setUser} />}
         </div>
     );
 }

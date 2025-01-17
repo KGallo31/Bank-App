@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import 'reactjs-popup/dist/index.css';
 
-function Login(props) {
+function Login({setUser}) {
     //Create your states here.
 
     const [pin, setPin] = useState("")
 
     const login = () => {
-        
+        if (pin === "1111"){
+            setUser({})
+        }
     }
 
 
